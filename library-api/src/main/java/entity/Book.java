@@ -1,4 +1,5 @@
 package entity;
 
-public record Book(String title, String author, int year) {
+
+public record Book(Long id, String title, String author, int year) {
 }
