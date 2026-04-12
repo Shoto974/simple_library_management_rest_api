@@ -32,8 +32,8 @@ public class BookService {
         return newBook;
     }
 
-    public Book updateBook(Book book){
-        Book updatedBook = new Book(book.id(), book.title(), book.author(), book.year());
+    public Book updateBook(Long id, Book book) {
+        Book updatedBook = new Book(id, book.title(), book.author(), book.year());
         bookRepository.save(updatedBook);
         return updatedBook;
     }
@@ -41,11 +41,5 @@ public class BookService {
     public void deleteBook(long id){
         bookRepository.deleteById(id);
     }
-
-
-
-
-
-
 
 }
