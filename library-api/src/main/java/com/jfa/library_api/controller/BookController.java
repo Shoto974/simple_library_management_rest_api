@@ -1,9 +1,8 @@
 package com.jfa.library_api.controller;
 
 import com.jfa.library_api.service.BookService;
-import entity.Book;
+import com.jfa.library_api.entity.Book;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,7 @@
 package com.jfa.library_api;
 
 import com.jfa.library_api.service.BookService;
-import entity.Book;
+import com.jfa.library_api.entity.Book;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

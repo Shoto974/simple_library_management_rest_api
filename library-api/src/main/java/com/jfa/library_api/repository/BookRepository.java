@@ -1,6 +1,6 @@
 package com.jfa.library_api.repository;
 
-import entity.Book;
+import com.jfa.library_api.entity.Book;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

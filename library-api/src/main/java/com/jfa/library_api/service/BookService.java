@@ -1,7 +1,7 @@
 package com.jfa.library_api.service;
 
 import com.jfa.library_api.repository.BookRepository;
-import entity.Book;
+import com.jfa.library_api.entity.Book;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +12,7 @@ public class BookService {
 
     private final BookRepository bookRepository;
     private final AtomicLong counter = new AtomicLong();
+
 
     public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
