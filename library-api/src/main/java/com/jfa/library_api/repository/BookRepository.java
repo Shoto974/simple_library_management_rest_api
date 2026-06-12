@@ -1,6 +1,7 @@
 package com.jfa.library_api.repository;
 
 import com.jfa.library_api.entity.Book;
+import com.jfa.library_api.exceptions.BookNotFoundException;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

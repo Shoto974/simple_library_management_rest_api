@@ -2,6 +2,7 @@ package com.jfa.library_api.service;
 
 
 import com.jfa.library_api.entity.Book;
+import com.jfa.library_api.exceptions.BookNotFoundException;
 import com.jfa.library_api.repository.BookRepository;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -12,8 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -68,5 +68,15 @@ class BookServiceTest {
     void deleteBook() {
         bookService.deleteBook(1L);
         assertEquals(2, bookService.getAllBooks().size());
+    }
+
+    @Test
+    void getBookById_shouldThrowException_whenBookDoesNotExist() {
+        BookNotFoundException exception = assertThrows(
+                BookNotFoundException.class,
+                () -> bookService.getBookById(999L)
+        );
+
+        assertEquals("Le livre avec l'id 999 n'existe pas", exception.getMessage());
     }
 }

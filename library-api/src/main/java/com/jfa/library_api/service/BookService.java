@@ -1,5 +1,6 @@
 package com.jfa.library_api.service;
 
+import com.jfa.library_api.exceptions.BookNotFoundException;
 import com.jfa.library_api.repository.BookRepository;
 import com.jfa.library_api.entity.Book;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,8 @@ public class BookService {
     }
 
     public Book getBookById(long id){
-        return bookRepository.findById(id).get();
+        return bookRepository.findById(id)
+                .orElseThrow(() -> new BookNotFoundException("Le livre avec l'id " + id + " n'existe pas"));
     }
 
     public Book addBook(Book book){
